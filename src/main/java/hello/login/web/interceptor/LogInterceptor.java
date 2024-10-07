@@ -24,9 +24,10 @@ public class LogInterceptor implements HandlerInterceptor {
         request.setAttribute(LOG_ID, uuid);
 
         /*
-         * 다양한 컨트롤러(햰들러)가 존재할 수 있기 때문에, Object 타입으로 받는다.
-         * @RequestMapping은 HandlerMethod
-         * 정적리소스는 ResourceHttpRequestHandler
+         * 요청을 처리하는 컨트롤러(햰들러)가 어떤 타입인지 모르기 때문에 Object 타입으로 받는다.
+         * 컨트롤러 메서드(@RequestMapping 등) 처리할 때는 HandlerMethod 타입
+         * 정적리소스(HTML, CSS, 이미지 파일 등. static 폴더에 저장된 모든 파일) 요청 처리는
+         * ResourceHttpRequestHandler 타입
          * */
 
         if (handler instanceof HandlerMethod) {
