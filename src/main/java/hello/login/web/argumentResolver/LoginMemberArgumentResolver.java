@@ -17,10 +17,10 @@ public class LoginMemberArgumentResolver implements HandlerMethodArgumentResolve
     @Override
     public boolean supportsParameter(MethodParameter parameter) {
     log.info("supportsParameter 실행");
-        boolean hasLoninAnnotation = parameter.hasParameterAnnotation(Login.class);
+        boolean hasLoginAnnotation = parameter.hasParameterAnnotation(Login.class);
         boolean hasMemberType = Member.class.isAssignableFrom(parameter.getParameterType());
 
-        return hasLoninAnnotation && hasMemberType;
+        return hasLoginAnnotation && hasMemberType;
     }
 
     @Override
